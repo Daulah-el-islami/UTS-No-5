@@ -1,0 +1,8 @@
+Buka project.
+Di terminal, jalankan perintah php artisan make:model Post -m. perintah ini akan membuat model baru dengan nama "Post" beserta file migrasi.
+Buka folder database -> migration, kemudian buka file create_posts_table.php
+Tambahkan field yang dibutuhkan pada metode up() dalam file migrasi tersebut di bagian schema create posts.
+Untuk field yang ditambahkan dalam migration menyimpan data ke dalam database, perlu dilakukan konfigurasi Mass Assignment di dalam model. Buka file app/Models/Post.php.
+Tambahkan property $fillable dalam model dan isi property tersebut dengan nama field yang dapat dimanipulasi untuk operasi mass assignment, seperti insert, update, dan delete.
+Di terminal, jalankan perintah php artisan migrate untuk mengeksekusi migrasi dan membuat tabel baru.
+Jika ada kendala di mana data yang dimigrasikan tidak berubah, lakukan reset migrasi dengan menjalankan perintah php artisan migrate:reset, kemudian jalankan kembali migrasi dengan perintah php artisan migrate.
